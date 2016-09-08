@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.ext['compileSdkVersion']
+    buildToolsVersion project.ext['buildToolsVersion']
+
+    defaultConfig {
+        applicationId 'com.nilhcem.the10mnwatchface'
+        versionCode project.ext['versionCode']
+        versionName project.ext['versionName']
+
+        minSdkVersion 23
+        targetSdkVersion project.ext['targetSdkVersion']
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.android.support:wearable:1.4.0'
+}
