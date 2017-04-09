@@ -1,11 +1,9 @@
 buildscript {
-    ext.supportVersion = '25.0.0'
-
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.3.1'
     }
 }
 
@@ -15,12 +13,15 @@ allprojects {
     }
 
     project.ext {
-        versionCode = 1
-        versionName = '1.0.0'
+        applicationId = 'com.nilhcem.the10mnwatchface'
         compileSdkVersion = 25
-        buildToolsVersion = '25.0.0'
-        minSdkVersion = 18
         targetSdkVersion = 25
+        buildToolsVersion = '25.0.2'
+
+        versionName = '1.1.0'
+        def buildNumber = '01'
+        def multiApkVariant = '00'
+        versionCode = versionName.replace('.', '') + buildNumber + multiApkVariant
     }
 }
 

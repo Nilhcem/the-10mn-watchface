@@ -5,11 +5,11 @@ android {
     buildToolsVersion project.ext['buildToolsVersion']
 
     defaultConfig {
-        applicationId 'com.nilhcem.the10mnwatchface'
-        versionCode project.ext['versionCode']
+        applicationId project.ext['applicationId']
         versionName project.ext['versionName']
+        versionCode project.ext['versionCode'].toInteger()
 
-        minSdkVersion project.ext['minSdkVersion']
+        minSdkVersion 18
         targetSdkVersion project.ext['targetSdkVersion']
     }
 
@@ -22,5 +22,6 @@ android {
 }
 
 dependencies {
-    wearApp project(':wear')
+    compile project(':common')
+    wearApp project(path: ':wear', configuration: 'wear1Release')
 }
